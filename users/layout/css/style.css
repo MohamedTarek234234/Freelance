@@ -1,0 +1,626 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #323232;
+    --primary2-color: #2f2f2f;
+    --secondary-color: #FFAC41;
+    --red-color: #ff1e56;
+    --darkWhite-color: #e3dfdf;
+    --gray-color: #999999;
+    --white-color: #ffffff;
+    --link-color: #0000ff;
+    --padding-left-right: 60px;
+    --h1-size: 80px;
+    --h2-size: 75px;
+    --h3-size: 35px;
+    --h4-size: 30px;
+    --h5-size: 20px;
+    --p-size: 18px;
+    --line-height: 30px;
+    --radius-input: 30px;
+    --input-font-size: 17px;
+    --input-text-padding: 5px;
+    --button-font-size: 16px;
+    --button-font-weight: 600;
+}
+
+body {
+    position: relative;
+}
+
+
+/* TODO: Start Style Scroll Bar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: var(--primary2-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--red-color);
+}
+/* TODO: End Style Scroll Bar */
+
+/* TODO: Start Style Dashboard */
+
+.dashboard {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 65px auto calc(360px + 42px);
+    grid-template-areas: "nav nav nav nav nav nav nav nav nav nav"
+                        "container container container container container container container container container container"
+                        "foot foot foot foot foot foot foot foot foot foot";
+}
+
+.container {
+    grid-area: container;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    
+}
+
+/* TODO: Start */
+
+.container .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.container .details .box {
+    background-color: var(--primary2-color);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: 0 2px 115px rgba(32, 32, 32, 30%);
+}
+
+.container .details .box:hover a{
+    color: var(--secondary-color);
+}
+.container .details .box:hover {
+    box-shadow: 0 2px 115px rgba(255, 30, 86, 30%);
+    cursor: pointer;
+}
+
+
+.container .details .box a{
+    color: var(--white-color);
+    text-align: center;
+}
+.container .details .box a .box-name{
+    font-size: 25px;
+}
+
+.container .details .box a .icon {
+    font-size: 45px;
+}
+.container .details .box a .num {
+    font-size: 45px;
+    margin: 7px 0;
+}
+
+/* TODO: End*/
+
+/* TODO: */
+
+.container  .search-users {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.container .search-users form {
+    background-color: var(--darkWhite-color);
+    border-radius: var(--radius-input);
+    -webkit-border-radius: var(--radius-input);
+    -moz-border-radius: var(--radius-input);
+    -ms-border-radius: var(--radius-input);
+    -o-border-radius: var(--radius-input);
+    padding: 3px;
+    width: 850px;
+    display: flex;
+    align-items: center;
+}
+
+.container .search-users form .search-icon {
+    padding: 0px 5px 0px 10px;
+    color: var(--secondary-color);
+}
+
+.container .search-users form:hover .search-icon {
+    color: var(--red-color);
+}
+
+.container .search-users form input[type="search"] {
+    font-size: var(--input-font-size);
+    flex: 1;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: var(--input-text-padding);
+}
+
+.container .search-users form input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 10px;
+    font-size: var(--button-font-weight);
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    font-weight: var(--button-font-weight);
+    border: none;
+}
+
+.container .search-users form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--red-color);
+}
+
+/* TODO: */
+
+/* TODO: Start Style Table Of Members */
+
+.container  .table-members {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.container  .table-members table {
+
+    background-color: var(--darkWhite-color);
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(32, 32, 32, 30%);
+}
+
+.container  .table-members table th, td {
+    padding: 12px 15px;
+}
+
+.container  .table-members table th {
+    background-color: var(--primary2-color);
+    color: var(--darkWhite-color);
+    text-transform: uppercase;
+}
+
+.container  .table-members table tr:nth-child(odd) {
+    background-color: var(--white-color);
+}
+
+.container  .table-members table .table-btn a  {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    color: var(--white-color);
+}
+
+.container  .table-members table .table-btn .edit-btn {
+    background-color: #0b9df5;
+}
+
+.container  .table-members table .table-btn .edit-btn:hover {
+    background-color: #0f99ee;
+}
+
+.container  .table-members table .table-btn .del-btn {
+    background-color: #fa1a1a;
+    margin-left: 5px;
+}
+
+.container  .table-members table .table-btn .del-btn:hover {
+    background-color: #e30000;
+}
+/* TODO: End Style Table Of Members */
+
+
+
+/* TODO: Start Style navbar */
+.navbar {
+    grid-area: nav;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 65px;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+    position: fixed;
+}
+
+.navbar a {
+    color: var(--white-color);
+}
+
+
+.navbar .site-name {
+    color: var(--white-color);
+    font-size: 40px;
+}
+
+.navbar .site-name::first-letter {
+    text-transform: uppercase;
+    font-size: 50px;
+    color: var(--secondary-color);
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul .search-form form {
+    background-color: var(--darkWhite-color);
+    border-radius: var(--radius-input);
+    -webkit-border-radius: var(--radius-input);
+    -moz-border-radius: var(--radius-input);
+    -ms-border-radius: var(--radius-input);
+    -o-border-radius: var(--radius-input);
+    padding: 3px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul .search-form form .search-icon {
+    padding: 0px 5px 0px 10px;
+    color: var(--secondary-color);
+}
+
+.navbar ul .search-form form:hover .search-icon {
+    color: var(--red-color);
+}
+
+.navbar ul .search-form form input[type="search"] {
+    font-size: var(--input-font-size);
+    flex: 1;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: var(--input-text-padding);
+}
+
+.navbar ul .search-form form input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 10px;
+    font-size: var(--button-font-weight);
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    font-weight: var(--button-font-weight);
+    border: none;
+}
+
+.navbar ul .search-form form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--red-color);
+}
+
+.navbar ul .links-nav {
+    display: inline-block;
+    margin: 0 23px;
+    font-size: 17px;
+    position: relative;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+}
+
+.navbar ul .links-nav::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: var(--red-color);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+}
+
+.navbar ul .links-nav:hover::after {
+    width: 100%;
+}
+
+.navbar ul .links-nav a:hover {
+    color: var(--secondary-color);
+}
+
+.navbar ul .links-nav .dropdown-menu {
+    display: none;
+}
+
+.navbar ul .links-nav:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--primary-color);
+}
+
+.navbar ul .links-nav:hover .dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar ul .links-nav:hover .dropdown-menu ul .links-nav a .icon{
+    float: right;
+}
+
+.navbar ul .links-nav:hover .dropdown-menu ul .links-nav {
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* TODO: End Style navbar */
+
+/* TODO: Start Style Message Page */
+.messages-in-back {
+    margin-left: 15px;
+    position: absolute;
+}
+.items-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+    overflow: hidden;
+    margin: 10px 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    animation-name: up-and-down;
+    animation-duration: 2s;
+}
+@keyframes up-and-down {
+    from {
+        opacity: 0;
+        transform: translateY(-71px);
+        -webkit-transform: translateY(-71px);
+        -moz-transform: translateY(-71px);
+        -ms-transform: translateY(-71px);
+        -o-transform: translateY(-71px);
+}
+    to {
+        opacity: 1;
+}
+}
+
+.items-message .icon-mass,
+.items-message .icon-mess-2 {
+    width: 55px;
+    padding: 15px 0px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.items-message .icon-mess-2:hover {
+    cursor: pointer;
+}
+
+.items-message .message {
+    padding: 0 15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.m1, .m1 .message {
+    background-color: #75c4f3;
+    color: #0000c9;
+}
+.m1 .icon-mass,
+.m1 .icon-mess-2 {
+    background-color: #0b9df5;
+    color: #0000c9;
+}
+.m2, .m2 .message {
+    background-color: #81e6ad;
+    color: green;
+}
+.m2 .icon-mass,
+.m2 .icon-mess-2 {
+    background-color: #25c669;
+    color: green;
+}
+.m3, .m3 .message {
+    background-color: #ffe061;
+    color: #a66600;
+}
+.m3 .icon-mass,
+.m3 .icon-mess-2{
+    background-color: #ffae2c;
+    color: #a66600;
+}
+.m4, .m4 .message {
+    background-color: #ff5f4c;
+    color: #5e0000;
+}
+.m4 .icon-mass,
+.m4 .icon-mess-2 {
+    background-color: #eb1600;
+    color: #5e0000;
+}
+/* TODO: End Style Message Page */
+
+
+/* TODO: Start Style Footer */
+.footer {
+    grid-area: foot;
+}
+.footer .footer-container{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 360px;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer .footer-container ul {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 30px;
+}
+
+.footer .footer-container ul li {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.footer .footer-container ul li h5 {
+    font-size: var(--h5-size);
+    color: var(--secondary-color);
+    padding-bottom: 20px;
+    font-weight: 900;
+}
+
+.footer .footer-container ul li a {
+    color: var(--white-color);
+}
+
+.footer .footer-container ul li .links-footer a{
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    font-size: var(--p-size);
+}
+
+.footer .footer-container ul li .links-footer a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    left: 0;
+    background-color: var(--red-color);
+    bottom: -5px;
+    position: absolute;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.footer .footer-container ul li .links-footer a:hover:after {
+    width: 100%;
+}
+
+.footer .footer-container ul li .links-footer a:hover {
+    color: var(--secondary-color);
+}
+
+.footer .footer-container ul li p {
+    font-size: var(--p-size);
+    padding-left: 325px;
+    padding-right: 325px;
+    line-height: var(--line-height);
+}
+
+.footer .footer-container ul li span {
+    font-size: 45px;
+    margin-right: 30px;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+}
+
+.footer .footer-container ul li span a:hover {
+    color: var(--red-color);
+}
+
+.footer .copy-right {
+    width: 100%;
+    padding: 12px 0px;
+    color: var(--white-color);
+    background-color: var(--primary2-color);
+    font-size: var(--p-size);
+    text-align: center;
+    height: 42px;
+}
+/* TODO: End Style Footer */
